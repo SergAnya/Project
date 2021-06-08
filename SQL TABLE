@@ -1,0 +1,56 @@
+CREATE TABLE users (
+    user_id int NOT NULL AUTO_INCREMENT,
+    user_surname_en_US varchar(255),
+    user_name_en_US varchar(255),
+    user_surname_uk_UA varchar(255),
+    user_name_uk_UA varchar(255),
+    user_email varchar(255),
+    user_role varchar(255),
+    user_password varchar(255),
+    speakers_rating varchar(255),
+    speakers_bonus varchar(255),
+    PRIMARY KEY (user_id)
+);
+
+CREATE TABLE votes (
+    id int NOT NULL AUTO_INCREMENT,
+    user_id varchar(255),
+    speaker_id varchar(255),
+    speaker_mark varchar(255),
+    PRIMARY KEY (id)
+
+);
+
+CREATE TABLE conferences (
+    id_conference int NOT NULL AUTO_INCREMENT,
+    conference_topic_en_US varchar(255),
+    conference_topic_uk_UA varchar(255),
+    conference_location_en_US varchar(255),
+    conference_location_uk_UA varchar(255),
+    conference_timestamp varchar(255),
+    PRIMARY KEY (id_conference)
+
+);
+
+CREATE TABLE reports (
+    id_report int NOT NULL AUTO_INCREMENT,
+    report_topic_en_US varchar(255),
+    report_topic_uk_UA varchar(255),
+    id_conference varchar(255),
+    speaker_id varchar(255),
+    report_datetime varchar(255),
+    registrated_participants_amount varchar(255),
+    visited_participants_amount varchar(255),
+    PRIMARY KEY (id_report)
+
+);
+
+CREATE TABLE users_on_reports (
+    id int NOT NULL AUTO_INCREMENT,
+    users_id_user varchar(255),
+    reports_id_report varchar(255),
+    PRIMARY KEY (id)
+);
+
+insert into users ( user_name_en_US, user_surname_en_US, user_name_uk_UA, user_surname_uk_UA, user_email, user_role, user_password) values ('admin','admin','админ','админ','admin@gmail.com','ADMIN','$2a$10$eqhw2ZW3nAWIgah0nG.ePOk.CTMCRAEVLA9XnPqDxxJKrmvfvVeEe');
+

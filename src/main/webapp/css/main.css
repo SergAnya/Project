@@ -1,0 +1,226 @@
+
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: bold, italic;
+    font-weight: 400;
+    line-height: 2.5;
+    height: 100%;
+    color: #696969;
+    text-align: left;
+    background-color: #C0C0C0;
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #d8bfcb6e;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 10px;
+    display: inline-block;
+    float: none;
+    text-align: center;
+    /* width: 120px; */
+    margin-left: 5px;
+    /* padding: 3px !important; */
+    font-size: 14px;
+    color: #2F4F4F;
+}
+
+
+
+.btn-primary {
+    background-color: #0000FF;
+    border-radius: 10px;
+    display: inline-block;
+    float: none;
+    text-align: center;
+    width: auto;
+    color: gray;
+    margin-left: 5px;
+}
+.btn-danger {
+    border-radius: 10px;
+    color: white;
+    margin-left: 5px;
+
+}
+.btn-success {
+    border-radius: 100px;
+    color: white;
+
+}
+
+
+.footer {
+    position: relative;
+    margin-top: -150px; /* negative value of footer height */
+    height: 150px;
+    clear:both;
+    padding-top:30px;
+}
+
+
+.navbar-light .navbar-brand {
+    color: black;
+}
+
+.navbar-light .navbar-brand:hover {
+    color: #708090
+}
+
+
+strong {
+    font-weight: 800;
+}
+
+em {
+    font-style: italic;
+}
+
+.table-responsive {
+    background: transparent;
+    border-collapse: separate;
+    font-size: 15px;
+    line-height: 25px;
+    margin: 30px auto;
+    text-align: left;
+    width: 80%;
+       /* border: 1px solid #808080; */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 1px solid #808080;
+    margin-bottom: 6rem;!important;
+}
+
+th, td {
+
+    text-align: left;
+}
+th{
+    font-size: 1.1rem;
+}
+
+td {
+    background-color: #A9A9A9;
+    font-size: 0.8rem;
+}
+tr{
+    background-color: #778899;
+    font-size: 1rem;
+}
+
+.footer-copyright{
+    color:black
+}
+.form-horizontal .form-control{
+    border: 2px solid black;
+    background-color: #80002c42;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+    width: auto;
+    height: 55px;
+    margin-left: 6px;
+    padding: 0px!important;
+    font-size: 14px;
+    color: #000000;
+}
+.form-horizontal .form-control:hover {
+    color: grey;
+    border: 2px solid grey;
+    border-radius: 100px;
+    display: inline-block;
+    float: none;
+    text-align: center;
+    font-size: 14px;
+}
+
+input{
+
+    margin: 10px;
+}
+#new-confernce{
+    margin-top: 10rem;
+}
+.card {
+    margin-top: 30px;
+}
+
+#main{
+    padding-bottom:150px;
+}
+.col .col-4 .col-6{
+   box-sizing: content-box;!important;
+}
+.comers-amount {
+    width: 60px;
+}
+
+    /*---*/
+.rating {
+    float:left;
+}
+
+.rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+    clip:rect(0,0,0,0);
+}
+
+.rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    padding:0 .1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:200%;
+    line-height:1.2;
+    color:#f77676;
+    text-shadow:1px 1px #bbb, 2px 2px #666, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:before {
+    content:'★';
+}
+
+.rating > input:checked ~ label {
+    color: #135eff;
+    text-shadow:1px 1px #1c6bcc, 2px 2px #083199, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: #D3D3D3;
+    text-shadow:1px 1px #2d91da, 2px 2px #1354b5, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating> input:checked + label:hover,
+.rating> input:checked + label:hover ~ label,
+.rating> input:checked ~ label:hover,
+.rating> input:checked ~ label:hover ~ label,
+.rating> label:hover ~ input:checked ~ label {
+    color: #D3D3D3;
+    text-shadow:1px 1px #1d78ee, 2px 2px #0f37b5, .1em .1em .2em rgba(0,0,0,.5);
+}
+
+.rating > label:active {
+    position:relative;
+    top:2px;
+    left:2px;
+}
+/*---*/
+
+

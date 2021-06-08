@@ -1,0 +1,20 @@
+
+.enjoy {
+    background-color: transparent
+}
+.btn-primary {
+    background-color: #007bff;
+    border-radius: 10px;
+    text-align: center;
+    width: auto;
+    color: white;
+}
+.vertical-center {
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+img{
+    height: 300px;
+}
