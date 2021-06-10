@@ -71,6 +71,22 @@
                             </c:otherwise>
                         </c:choose>
                         <c:choose>
+                            <c:when test="${sortType=='quantity'}">
+                                <option value="quantity" selected><fmt:message key="page.message.sort.only.past.withiters" /></option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="quantity"><fmt:message key="page.message.sort.only.past.withiters" /></option>
+                            </c:otherwise>
+                        </c:choose>
+                        <c:choose>
+                            <c:when test="${sortType=='topic'}">
+                                <option value="topic" selected><fmt:message key="page.message.sort.only.future.withiters" /></option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="topic"><fmt:message key="page.message.sort.only.future.withiters" /></option>
+                            </c:otherwise>
+                        </c:choose>
+                        <c:choose>
                             <c:when test="${sortType=='future'}">
                                 <option value="future" selected><fmt:message key="page.message.sort.only.future" /></option>
                             </c:when>

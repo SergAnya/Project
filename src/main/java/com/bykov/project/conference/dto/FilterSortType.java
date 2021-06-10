@@ -1,5 +1,5 @@
 package com.bykov.project.conference.dto;
 
 public enum FilterSortType {
-    ALL,FUTURE,PAST
+    ALL,FUTURE,PAST,TOPIC,QUANTITY
 }

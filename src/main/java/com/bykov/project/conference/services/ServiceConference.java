@@ -3,12 +3,14 @@ package com.bykov.project.conference.services;
 import com.bykov.project.conference.dao.DaoConference;
 import com.bykov.project.conference.dao.DaoFactory;
 import com.bykov.project.conference.dao.entity.Conference;
+import com.bykov.project.conference.dao.entity.Report;
 import com.bykov.project.conference.dto.DTOConference;
 import com.bykov.project.conference.dto.FilterSortType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ServiceConference {
     private static final Logger LOG = LogManager.getLogger(ServiceConference.class);
@@ -39,6 +41,10 @@ public class ServiceConference {
                 return getPaginatedPastConferences(begin, recordsPerPage, language);
             case FUTURE:
                 return getPaginatedFutureConferences(begin, recordsPerPage, language);
+            case TOPIC:
+                return getPaginatedTopicConferences(begin, recordsPerPage, language);
+            case QUANTITY:
+                return getPaginatedQuantityConferences(begin, recordsPerPage, language);
             default:
                 return new ArrayList<>();
         }
@@ -52,12 +58,27 @@ public class ServiceConference {
         return sortPaginatedConferencesByDateTime(DAO_CONFERENCE.getPaginatedFutureConferences(begin, recordsPerPage, language));
     }
 
+    private List<Conference> getPaginatedTopicConferences(int begin, int recordsPerPage, String language) {
+        return DAO_CONFERENCE.getPaginatedConferences(begin, recordsPerPage, language)
+                .stream()
+                .sorted(Comparator.comparingInt(o -> o.getReports().size()))
+                .collect(Collectors.toList());
+    }
+    private List<Conference> getPaginatedQuantityConferences(int begin, int recordsPerPage, String language) {
+        return DAO_CONFERENCE.getPaginatedConferences(begin, recordsPerPage, language)
+                .stream()
+                .sorted(Comparator.comparingInt(o -> o.getReports().stream().mapToInt(Report::getRegestratedAmount).sum()))
+                .collect(Collectors.toList());
+    }
+
     public int getConferencesAmount() {
         return DAO_CONFERENCE.getConferencesAmount();
     }
     public int getConferencesAmount(FilterSortType type) {
         switch (type){
             case ALL:
+            case TOPIC:
+            case QUANTITY:
                 return getConferencesAmount();
             case PAST:
                 return getPastConferencesAmount();
